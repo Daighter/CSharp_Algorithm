@@ -29,7 +29,11 @@
             list.Remove("2번 데이터");
 
             string? findValue = list.Find(x => x.Contains('4'));
+            Console.WriteLine(findValue);
             int findIndex = list.FindIndex(x => x.Contains('1'));
+            Console.WriteLine(findIndex);
+
+            Console.WriteLine(list.IndexOf("4번 데이"));
         }
     }
 }
