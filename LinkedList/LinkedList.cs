@@ -152,41 +152,40 @@ namespace DataStructure
             return newNode;
         }
 
+        // 입력받은 노드를 제거하는 함수
         public void Remove(LinkedListNode<T> node)
         {
-            if (node.list != this)
+            if (node.list != this)          // 기준 노드의 리스트가 새 노드의 리스트와 다르면 예외처리
                 throw new InvalidOperationException();
-            if (node == null)
+            if (node == null)               // 기준 노드가 없으면 예외처리
                 throw new ArgumentNullException();
 
-            // 지웠을 때 head나 tail
-            if (head == node)
+            if (node.prev != null)              // 전 노드가 있으면 이어주고
+                node.prev.next = node.next;
+            else                                // 없으면 해당 직군 양도
                 head = node.next;
-            if (tail == node)
+
+            if (node.next != null)              // 앞 노드가 있으면 이어주고
+                node.next.prev = node.prev;
+            else                                // 없으면 해당 직군 양도
                 tail = node.prev;
 
-            if (node.prev != null)
-            {
-                node.prev.next = node.next;
-            }
-            if (node.next != null)
-            {
-                node.next.prev = node.prev;
-            }
+            // 카운트 증가
             count--;
         }
 
+        // 입력받은 값으로 노드를 제거하는 함수
         public bool Remove(T value)
         {
-            LinkedListNode<T> findNode = Find(value);
-            if (findNode != null)
+            LinkedListNode<T> findNode = Find(value);       // 찾은 노드 변수 선언 맟 값으로 노드 찾기
+            if (findNode != null)                           // 찾은 노드가 있으면
             {
-                Remove(findNode);
-                return true;
+                Remove(findNode);                               // 그 노드 제거
+                return true;                                    // 긍정 반환
             }
             else
             {
-                return false;
+                return false;                                   // 없으니 부정 반환
             }
         }
 
