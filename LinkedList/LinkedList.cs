@@ -127,6 +127,24 @@ namespace DataStructure
             return newNode;
         }
 
+        public LinkedListNode<T> AddAfter(LinkedListNode<T> node, T value)
+        {
+            LinkedListNode<T> newNode = new LinkedListNode<T>(this, value);
+
+            newNode.next = node.next;
+            newNode.prev = node;
+
+            node.next = newNode;
+            if (node.next != null)
+                node.next.prev = newNode;
+            else
+                tail = newNode;
+            
+            count++;
+
+            return newNode;
+        }
+
         public void Remove(LinkedListNode<T> node)
         {
             if (node.list != this)
