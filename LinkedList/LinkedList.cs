@@ -204,5 +204,21 @@ namespace DataStructure
             }
             return null;                                    // 마지막 노드까지 검사하도 안나오면 null반환
         }
+
+        public LinkedListNode<T> FindLast(T value)
+        {
+            LinkedListNode<T> target = tail;
+            EqualityComparer<T> comparer = EqualityComparer<T>.Default;
+
+            while (target != null)
+            {
+                if (comparer.Equals(value, target.Item))
+                    return target;
+                else
+                    target = target.prev;
+            }
+
+            return null;
+        }
     }
 }
