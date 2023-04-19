@@ -249,11 +249,7 @@ namespace DataStructure
 
             if (findNode != null)
             {
-                Console.WriteLine(findNode.Item);
-                if (findNode == head)
-                    Console.WriteLine($"I|'m head");
-                if (findNode == tail)
-                    Console.WriteLine($"I|'m tail");
+                Print(findNode);
             }
         }
     }
