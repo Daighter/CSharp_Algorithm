@@ -73,9 +73,9 @@ namespace DataStructure
             }
             else                        // 2-2 Head 노드가 없을 때
             {
-                head = newNode;
                 tail = newNode;
             }
+            head = newNode;
             // 3. 갯수 늘리기
             count++;
 
