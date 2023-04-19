@@ -163,7 +163,7 @@ namespace DataStructure
 
             if (node.prev != null)              // 전 노드가 있으면 이어주고
                 node.prev.next = node.next;
-            else                                // 없으면 해당 직군 양도
+            else                                // 없으면 본노드가 head이니 해당 직군 양도
                 head = node.next;
 
             if (node.next != null)              // 앞 노드가 있으면 이어주고
