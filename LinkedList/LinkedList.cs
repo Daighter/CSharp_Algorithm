@@ -68,14 +68,14 @@ namespace DataStructure
             // 2. 연결구조 바꾸기
             if (head != null)           // 2-1 Head 노드가 있었을 때
             {
-                newNode.next = head;
-                head.prev = newNode;
+                newNode.next = head;        // 새 노드의 다음 노드는 맨앞 노드
+                head.prev = newNode;        // 맨앞 노드의 전 노드는 새 노드
             }
             else                        // 2-2 Head 노드가 없을 때
             {
-                tail = newNode;
+                tail = newNode;             // 끝 노드는 새 노드
             }
-            head = newNode;
+            head = newNode;             // 맨앞 도느는 새 노드
             // 3. 갯수 늘리기
             count++;
 
