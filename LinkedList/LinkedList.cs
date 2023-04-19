@@ -189,6 +189,18 @@ namespace DataStructure
             }
         }
 
+        public void RemoveFirst()
+        {
+            if (head == null)
+                throw new ArgumentNullException();
+
+            // head를 양도하고
+            head = head.next;
+
+            // 카운트 감소
+            count--;
+        }
+
         // 값으로 노드를 찾는 함수
         public LinkedListNode<T> Find(T value)
         {
@@ -219,6 +231,15 @@ namespace DataStructure
             }
 
             return null;
+        }
+
+        public void Print(LinkedListNode<T> node)
+        {
+            Console.WriteLine(node.Item);
+            if (node == head)
+                Console.WriteLine($"I|'m head");
+            if (node == tail)
+                Console.WriteLine($"I|'m tail");
         }
     }
 }
