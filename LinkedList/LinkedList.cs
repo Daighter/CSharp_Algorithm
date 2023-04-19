@@ -189,19 +189,20 @@ namespace DataStructure
             }
         }
 
+        // 값으로 노드를 찾는 함수
         public LinkedListNode<T> Find(T value)
         {
-            LinkedListNode<T> target = head;
-            EqualityComparer<T> comparer = EqualityComparer<T>.Default;
+            LinkedListNode<T> target = head;                // 목표 노드 변수 선언 및 맨앞 노드러 지정
+            EqualityComparer<T> comparer = EqualityComparer<T>.Default;     // 비교클래스 선언 및 초기화
 
-            while (target != null)
+            while (target != null)                          // 목표(검사 노드)가 있으면 반복
             {
-                if (comparer.Equals(value, target.Item))
-                    return target;
+                if (comparer.Equals(value, target.Item))        // 비교클래스의 함수를 이용해 입력값과 검사노드의 값이 같으면
+                    return target;                                  // 검사노드 반환
                 else
-                    target = target.next;
+                    target = target.next;                           // 없으면 목표를 다음 노드로 변경
             }
-            return null;
+            return null;                                    // 마지막 노드까지 검사하도 안나오면 null반환
         }
     }
 }
