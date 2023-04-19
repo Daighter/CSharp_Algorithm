@@ -58,6 +58,9 @@
                 // 링크드리스트 요소 삭제
                 linkedList.Remove("1번 앞데이터");
 
+
+
+
                 // 링크드리스트 요소 탐색
                 DataStructure.LinkedListNode<string> findNode = linkedList.Find("0번 뒤데이터");
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace DataStructure
 {
@@ -240,6 +241,20 @@ namespace DataStructure
                 Console.WriteLine($"I|'m head");
             if (node == tail)
                 Console.WriteLine($"I|'m tail");
+        }
+
+        public void Print(T value)
+        {
+            LinkedListNode<T> findNode = Find(value);
+
+            if (findNode != null)
+            {
+                Console.WriteLine(findNode.Item);
+                if (findNode == head)
+                    Console.WriteLine($"I|'m head");
+                if (findNode == tail)
+                    Console.WriteLine($"I|'m tail");
+            }
         }
     }
 }
