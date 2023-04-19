@@ -88,20 +88,96 @@ namespace DataStructure
             LinkedListNode<T> newNode = new LinkedListNode<T>(this, value);
 
             // 2. 연결구조 변경
-            if (tail != null)       // 2-1 Tail 노드가 있을 때
+            if (tail != null)           // 2-1 Tail 노드가 있을 때
             {
-                newNode.prev = tail;    // 새 노드의 전 노드는 끝 노드 
-                tail.next = newNode;    // 끝 노드의 다음 노드는 새 노드
+                newNode.prev = tail;        // 새 노드의 전 노드는 끝 노드
+                tail.next = newNode;        // 끝 노드의 다음 노드는 새 노드
             }
-            else                    // 2-2 Tail 노드가 없을 때
+            else                        // 2-2 Tail 노드가 없을 때
             {
-                head = newNode;         // 맨앞 노드는 새 노드
+                head = newNode;             // 맨앞 노드는 새 노드
             }
-            tail = newNode;         // 공틍으로 끝 노드는 새 노드
+            tail = newNode;             // 공틍으로 끝 노드는 새 노드
             // 3. 카운트 증가
             count++;
 
             return newNode;
+        }
+
+        public LinkedListNode<T> AddBefore(LinkedListNode<T> node, T value)
+        {
+            if (node.list != this)
+                throw new InvalidOperationException();
+            if (node == null)
+                throw new ArgumentNullException();
+
+            LinkedListNode<T> newNode = new LinkedListNode<T>(this, value);
+
+            newNode.next = node;
+            newNode.prev = node.prev;
+
+            node.prev = newNode;
+            if (node.prev != null)
+                node.prev.next = newNode;
+            else
+                head = newNode;
+
+            count++;
+
+            return newNode;
+        }
+
+        public void Remove(LinkedListNode<T> node)
+        {
+            if (node.list != this)
+                throw new InvalidOperationException();
+            if (node == null)
+                throw new ArgumentNullException();
+
+            // 지웠을 때 head나 tail
+            if (head == node)
+                head = node.next;
+            if (tail == node)
+                tail = node.prev;
+
+            if (node.prev != null)
+            {
+                node.prev.next = node.next;
+            }
+            if (node.next != null)
+            {
+                node.next.prev = node.prev;
+            }
+            count--;
+        }
+
+        public bool Remove(T value)
+        {
+            LinkedListNode<T> findNode = Find(value);
+            if (findNode != null)
+            {
+                Remove(findNode);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public LinkedListNode<T> Find(T value)
+        {
+            LinkedListNode<T> target = head;
+            EqualityComparer<T> comparer = EqualityComparer<T>.Default;
+
+            while (target != null)
+            {
+                if (comparer.Equals(value, target.Item))
+                    return target;
+                else
+                    target = target.next;
+            }
+            return null;
         }
     }
 }
