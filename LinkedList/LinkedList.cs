@@ -97,50 +97,57 @@ namespace DataStructure
             {
                 head = newNode;             // 맨앞 노드는 새 노드
             }
-            tail = newNode;             // 공틍으로 끝 노드는 새 노드
+            tail = newNode;             // 공통으로 끝 노드는 새 노드
             // 3. 카운트 증가
             count++;
 
             return newNode;
         }
 
+        // 새 노드를 기준 노드의 앞에 추가하는 함수
         public LinkedListNode<T> AddBefore(LinkedListNode<T> node, T value)
         {
-            if (node.list != this)
+            if (node.list != this)          // 기준 노드의 리스트가 새 노드의 리스트와 다르면 예외처리
                 throw new InvalidOperationException();
-            if (node == null)
+            if (node == null)               // 기준 노드가 없으면 예외처리
                 throw new ArgumentNullException();
 
-            LinkedListNode<T> newNode = new LinkedListNode<T>(this, value);
+            LinkedListNode<T> newNode = new LinkedListNode<T>(this, value);     // 새 노드 선언
 
-            newNode.next = node;
-            newNode.prev = node.prev;
+            newNode.next = node;                    // 새 노드의 다음 노드는 기준 노드
+            newNode.prev = node.prev;               // 새 노드의 전 노드는 기준 노드의 전 노드
 
-            node.prev = newNode;
-            if (node.prev != null)
-                node.prev.next = newNode;
+            node.prev = newNode;                    // 기준 노드의 전 노드는 새 노드
+            if (node.prev != null)                  // 기준 노드의 전 노드의가 있으면
+                node.prev.next = newNode;               // 기준 노드의 전 노드의 다음 노드는 새 노드
             else
-                head = newNode;
+                head = newNode;                         // 기준 노드의 전 노드가 없으면 새 노드가 맨앞 노드 
 
-            count++;
+            count++;                                // 카운트 증가
 
             return newNode;
         }
 
+        // 새 노드를 기준 노드의 앞에 추가하는 함수
         public LinkedListNode<T> AddAfter(LinkedListNode<T> node, T value)
         {
-            LinkedListNode<T> newNode = new LinkedListNode<T>(this, value);
+            if (node.list != this)          // 기준 노드의 리스트가 새 노드의 리스트와 다르면 예외처리
+                throw new InvalidOperationException();
+            if (node == null)               // 기준 노드가 없으면 예외처리
+                throw new ArgumentNullException();
 
-            newNode.next = node.next;
-            newNode.prev = node;
+            LinkedListNode<T> newNode = new LinkedListNode<T>(this, value);     // 새 노드 선언
 
-            node.next = newNode;
-            if (node.next != null)
-                node.next.prev = newNode;
+            newNode.next = node.next;               // 새 노드의 다음 노드는 기준노드의 다음 노드
+            newNode.prev = node;                    // 새 노드의 전 노드는 기준 노드
+
+            node.next = newNode;                    // 기준 노드의 다음 노드는 새 노드
+            if (node.next != null)                  // 기준 노드의 다음 노드가 있으면
+                node.next.prev = newNode;               // 기준 노드의 다음 노드의 전 노드는 새 노드
             else
-                tail = newNode;
+                tail = newNode;                         // 기준노드의 다음 노드가 없으면 새 노드가 끝 노드
             
-            count++;
+            count++;                                // 카운트 증가
 
             return newNode;
         }
