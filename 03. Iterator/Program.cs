@@ -5,14 +5,14 @@ namespace _03._Iterator
     internal class Program
     {
         static void Main(string[] args)
-        {
+        {/*
             // List 반복기
             Iterator.List<int> list = new Iterator.List<int>();
             for (int i = 1; i <= 5; i++) list.Add(i*i);
 
             list.Average(list);
 
-            /*list.Remove(2);
+            list.Remove(2);
             
             foreach (int i in list) Console.WriteLine(i);       // (Iterator.)list에 IEnumerable 있으니 가능한 부분
 
@@ -26,11 +26,14 @@ namespace _03._Iterator
             }
             Console.WriteLine(listIter.Current);
             listIter.Dispose();*/
-            /*
+            
             // LinkedList 반복기
             Iterator.LinkedList<int> linkedList = new Iterator.LinkedList<int>();
-            for (int i = 1; i <= 5; i++) linkedList.AddLast(i);
-            linkedList.Remove(3);
+            for (int i = 1; i <= 5; i++) linkedList.AddLast(i*i);
+
+            linkedList.Average(linkedList);
+
+            /*linkedList.Remove(3);
 
             foreach (int i in linkedList) Console.WriteLine(i);
 
@@ -96,7 +99,7 @@ namespace _03._Iterator
             }
         }
 
-        public void FindInt(IEnumerable<int> container, int value)
+        static void FindInt(IEnumerable<int> container, int value)
         {
             IEnumerator<int> iter = container.GetEnumerator();
 

@@ -240,6 +240,20 @@ namespace Iterator
             return null;
         }
 
+        public void Average(LinkedList<int> linkedList)
+        {
+            float aver = 0;
+            IEnumerator<int> linkedListIter = linkedList.GetEnumerator();
+
+            while (linkedListIter.MoveNext())                             // foreach와 같은 기능
+            {
+                Console.WriteLine(linkedListIter.Current);
+                aver += linkedListIter.Current;
+            }
+            aver /= (float)linkedList.Count;
+            Console.WriteLine(aver);
+        }
+
         public void Print(LinkedListNode<T> node)
         {
             Console.WriteLine(node.Item);
