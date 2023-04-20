@@ -6,6 +6,19 @@ namespace _03._Iterator
     {
         static void Main(string[] args)
         {
+            // Array Sort
+            int[] array = new int[10];
+            Random random = new Random();
+            for (int i = 0; i < 10; i++) { array[i] = random.Next(-100, 100); }
+            foreach (int i in array)
+            {
+                Console.Write(i);
+                Console.Write(", ");
+            }
+            Console.WriteLine();
+
+            Specifier.Specifier.Sort(array);
+
             // List 반복기
             Iterator.List<int> list = new Iterator.List<int>();
             /*for (int i = 1; i <= 5; i++) list.Add(i*i);
@@ -16,8 +29,8 @@ namespace _03._Iterator
             
             foreach (int i in list) Console.WriteLine(i);       // (Iterator.)list에 IEnumerable 있으니 가능한 부분
             */
-            Random random = new Random();
-            for (int i = 0; i < 10; i++) { list.Add(random.Next(-100, 100)); }
+            /*Random random2 = new Random();
+            for (int i = 0; i < 10; i++) { list.Add(random2.Next(-100, 100)); }
 
             IEnumerator<int> listIter = list.GetEnumerator();
 
@@ -31,7 +44,7 @@ namespace _03._Iterator
             Console.WriteLine();
             listIter.Dispose();
 
-            list.Sort(list);
+            list.Sort(list);*/
 
             /*
             // LinkedList 반복기

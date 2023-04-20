@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _03._Iterator
+namespace Specifier
 {
     internal class Specifier
     {
@@ -28,15 +28,22 @@ namespace _03._Iterator
                     }
                 }
             }
+            foreach (int i in array)
+            {
+                Console.Write(i);
+                Console.Write(", ");
+            }
+            Console.WriteLine();
         }
 
-        public static void Sort()
+        public static void Sort(int[] array)
         {
-            int[] array = { 3, -2, 1, -4, 9, -8, 7, -6, 5 };
-
-            Sort(array, AscendingOrder);    // { -8, -6, -4, -2, 1, 3, 5, 7, 9 }
-            Sort(array, DescendingOrder);   // { 9, 7, 5, 3, 1, -2, -4, -6, -8 }
-            Sort(array, AbsoluteOrder);     // { 1, -2, 3, -4, 5, -6, 7, -8, 9 }
+            Console.WriteLine();
+            Sort(array, AscendingOrder);
+            Console.WriteLine();
+            Sort(array, DescendingOrder);
+            Console.WriteLine();
+            Sort(array, AbsoluteOrder);
         }
 
         // 오름차순 정렬
