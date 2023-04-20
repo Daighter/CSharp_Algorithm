@@ -83,16 +83,19 @@ namespace _03._Iterator
                 Console.WriteLine(iter.Current);
             }
         }
-        /*
+        
         public void Find(IEnumerable<int> container)
         {
-            IEnumerable<int> iter = container.GetEnumerator();
+            IEnumerator<int> iter = container.GetEnumerator();
 
             iter.Reset();
-            while()
-
+            while (iter.MoveNext())
+            {
+                if (iter.Current == 10)
+                    Console.WriteLine("10 찾았음");
+            }
         }
-        */
+        
         IEnumerable<int> IterFunc()
         {
             yield return 1;

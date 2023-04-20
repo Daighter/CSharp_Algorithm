@@ -140,6 +140,8 @@ namespace Interator                                 // 기존 List와의 구분�
             size = 0;                               // 카운트는 0
         }
 
+        // ************************ 이하 반복기 부분 ***********************
+
         public IEnumerator<T> GetEnumerator()
         {
             return new Enumerator(this);
