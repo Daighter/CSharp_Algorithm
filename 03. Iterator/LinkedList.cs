@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interator
+namespace Iterator
 {
     public class LinkedListNode<T>
     {

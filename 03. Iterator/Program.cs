@@ -5,9 +5,9 @@ namespace _03._Iterator
     internal class Program
     {
         static void Main(string[] args)
-        {/*
+        {
             // List 반복기
-            Interator.List<int> list = new Interator.List<int>();
+            Iterator.List<int> list = new Iterator.List<int>();
             for (int i = 1; i <= 5; i++) list.Add(i);
             list.Remove(2);
 
@@ -22,10 +22,10 @@ namespace _03._Iterator
                 Console.WriteLine(listIter.Current);
             }
             Console.WriteLine(listIter.Current);
-            listIter.Dispose();*/
+            listIter.Dispose();
 
             // LinkedList 반복기
-            Interator.LinkedList<int> linkedList = new Interator.LinkedList<int>();
+            Iterator.LinkedList<int> linkedList = new Iterator.LinkedList<int>();
             for (int i = 1; i <= 5; i++) linkedList.AddLast(i);
             linkedList.Remove(3);
 

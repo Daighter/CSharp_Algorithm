@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interator                                 // 기존 List와의 구분을 위한 데임스페이스
+namespace Iterator                                 // 기존 List와의 구분을 위한 데임스페이스
 {
     internal class List<T> : IEnumerable<T>                                 // List<일반화> 선언
     {
