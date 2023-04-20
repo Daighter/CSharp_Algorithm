@@ -27,6 +27,7 @@ namespace _03._Iterator
             // LinkedList 반복기
             Interator.LinkedList<int> linkedList = new Interator.LinkedList<int>();
             for (int i = 1; i <= 5; i++) linkedList.AddLast(i);
+            linkedList.Remove(3);
 
             foreach (int i in linkedList) Console.WriteLine(i);
 
