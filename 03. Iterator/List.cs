@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static _03._Iterator.Specifier;
 
 namespace Iterator                                 // 기존 List와의 구분을 위한 데임스페이스
 {
@@ -138,6 +139,47 @@ namespace Iterator                                 // 기존 List와의 구분�
         {
             items = new T[DefaultCapacity];         // 배열은 새 인스턴스 지료형 이어받고[기본 용량]
             size = 0;                               // 카운트는 0
+        }
+
+        // 정렬 함수
+        public delegate int Compare(T left, T right);
+        public static void Sort(List<T> list, Compare compare)
+        {
+            // 정렬알고리즘 Bubble Sort
+            for (int i = 0; i < list.Count; i++)
+            {
+                for (int j = i; j < list.Count; j++)
+                {
+                    if (compare(list[i], list[j]) > 0)
+                    {
+                        T temp = list[i];
+                        list[i] = list[j];
+                        list[j] = temp;
+                    }
+                }
+            }
+        }
+
+        // 오름차순 정렬
+        public static int AscendingOrder(int left, int right)
+        {
+            if (left > right)
+                return 1;
+            else if (left < right)
+                return -1;
+            else
+                return 0;
+        }
+
+        // 내림차순 정렬
+        public static int DescendingOrder(int left, int right)
+        {
+            if (left < right)
+                return 1;
+            else if (left > right)
+                return -1;
+            else
+                return 0;
         }
 
         // ************************ 이하 반복기 부분 ***********************
