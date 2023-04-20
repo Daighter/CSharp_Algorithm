@@ -105,6 +105,12 @@ namespace Interator
             return newNode;
         }
 
+        // 기본 주가시 자동으로 마지막에 추가하도록 하는 함수
+        public void Add(T value)
+        {
+            AddLast(value);
+        }
+
         // 새 노드를 기준 노드의 앞에 추가하는 함수
         public LinkedListNode<T> AddBefore(LinkedListNode<T> node, T value)
         {
