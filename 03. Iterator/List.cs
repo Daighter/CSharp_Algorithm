@@ -162,7 +162,7 @@ namespace Interator                                 // 기존 List와의 구분�
             internal Enumerator(List<T> list)
             {
                 this.list = list;
-                this.index = -1;
+                this.index = 0;
                 this.current = default(T);
             }
 
@@ -172,20 +172,20 @@ namespace Interator                                 // 기존 List와의 구분�
                 {
                     if (index < 0 || index >= list.Count)
                         throw new InvalidOperationException();
-                    return Current;
+                    return current;
                 }
             }
 
             public void Dispose()
             {
-
+                Console.WriteLine("끝");
             }
 
             public bool MoveNext()
             {
-                if (index < list.Count - 1)
+                if (index < list.Count)
                 {
-                    current = list[++index];
+                    current = list[index++];            // 먼저 값을 주고 후위증가하여 다음으로 넘어감
                     return true;
                 }
                 else
@@ -198,7 +198,7 @@ namespace Interator                                 // 기존 List와의 구분�
             public void Reset()
             {
                 this.current = default(T);
-                index = -1;
+                index = 0;
             }
         }
     }

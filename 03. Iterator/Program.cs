@@ -8,18 +8,20 @@ namespace _03._Iterator
         {
             Interator.List<int> list = new Interator.List<int>();
             for (int i = 1; i <= 5; i++) list.Add(i);
+            list.Remove(2);
 
-            foreach (int i in list) Console.WriteLine(i);
+            //foreach (int i in list) Console.WriteLine(i);       // (Interator.)list에 IEnumerable 있으니 가능한 부분
 
             IEnumerator<int> iter = list.GetEnumerator();
 
             Console.WriteLine();
             Console.WriteLine(iter.Current);
-            while (iter.MoveNext())
+            while (iter.MoveNext())                             // foreach와 같은 기능
             {
                 Console.WriteLine(iter.Current);
             }
             Console.WriteLine(iter.Current);
+            iter.Dispose();
 
             /*
             Iterator.LinkedList<int> linkedList = new Iterator.LinkedList<int>();
@@ -72,7 +74,7 @@ namespace _03._Iterator
             for (int i = 0; i < 5; i++) strings.Add($"{i}데이터");
 
             IEnumerator<string> iter = strings.GetEnumerator();
-            iter.MoveNext();
+            iter.MoveNext();                // 반환형 bool
             Console.WriteLine(iter.Current);    // output : 0데이터
             iter.MoveNext();
             Console.WriteLine(iter.Current);    // output : 1데이터
@@ -95,7 +97,21 @@ namespace _03._Iterator
                     Console.WriteLine("10 찾았음");
             }
         }
-        
+
+        public void FindInt(IEnumerable<int> container, int value)
+        {
+            IEnumerator<int> iter = container.GetEnumerator();
+
+            iter.Reset();
+            while (iter.MoveNext())
+            {
+                if (iter.Current == value)
+                    Console.WriteLine("찾았음");
+            }
+            iter.Dispose();
+            Console.WriteLine("못찾음");
+        }
+
         IEnumerable<int> IterFunc()
         {
             yield return 1;
