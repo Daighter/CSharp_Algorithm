@@ -7,11 +7,11 @@ namespace _03._Iterator
         static void Main(string[] args)
         {
             // List 반복기
-            Iterator.List<int> list = new Iterator.List<int>();
+            IteratorL.List<int> list = new IteratorL.List<int>();
             for (int i = 1; i <= 5; i++) list.Add(i);
             list.Remove(2);
 
-            //foreach (int i in list) Console.WriteLine(i);       // (Interator.)list에 IEnumerable 있으니 가능한 부분
+            foreach (int i in list) Console.WriteLine(i);       // (Iterator.)list에 IEnumerable 있으니 가능한 부분
 
             IEnumerator<int> listIter = list.GetEnumerator();
 
@@ -23,7 +23,7 @@ namespace _03._Iterator
             }
             Console.WriteLine(listIter.Current);
             listIter.Dispose();
-
+            
             // LinkedList 반복기
             Iterator.LinkedList<int> linkedList = new Iterator.LinkedList<int>();
             for (int i = 1; i <= 5; i++) linkedList.AddLast(i);
