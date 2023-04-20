@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,7 +44,7 @@ namespace Interator
         }
     }
 
-    public class LinkedList<T>
+    public class LinkedList<T> : IEnumerable<T>
     {
         private LinkedListNode<T> head;
         private LinkedListNode<T> tail;
@@ -249,6 +250,74 @@ namespace Interator
             if (findNode != null)
             {
                 Print(findNode);
+            }
+        }
+
+        // ************************ 이하 반복기 부분 ***********************
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return new Enumerator(this);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return new Enumerator(this);
+        }
+
+        public struct Enumerator : IEnumerator<T>
+        {
+            private LinkedList<T> linkedList;
+            private LinkedListNode<T> node;
+            private T current;
+            private int count;
+            
+            public T Current { get { return current; } }
+
+            internal Enumerator(LinkedList<T> linkedList)
+            {
+                this.linkedList = linkedList;
+                this.node = linkedList.head;
+                this.current = default(T);
+                this.count = linkedList.Count;
+                
+            }
+
+            object IEnumerator.Current
+            {
+                get
+                {
+                    if (count < 0 || count >= linkedList.Count)
+                        throw new InvalidOperationException();
+                    return current;
+                }
+            }
+
+            public void Dispose()
+            {
+                Console.WriteLine("끝");
+            }
+
+            public bool MoveNext()
+            {
+                if (node != null)
+                {
+                    current = node.Item;            // 먼저 값을 주고 후위증가하여 다음으로 넘어감
+                    node = node.next;
+                    return true;
+                }
+                else
+                {
+                    current = default(T);
+                    return false;
+                }
+            }
+
+            public void Reset()
+            {
+                node = linkedList.head;
+                current = default(T);
+                count = 0;
             }
         }
     }

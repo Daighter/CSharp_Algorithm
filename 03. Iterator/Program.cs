@@ -5,35 +5,41 @@ namespace _03._Iterator
     internal class Program
     {
         static void Main(string[] args)
-        {
+        {/*
+            // List 반복기
             Interator.List<int> list = new Interator.List<int>();
             for (int i = 1; i <= 5; i++) list.Add(i);
             list.Remove(2);
 
             //foreach (int i in list) Console.WriteLine(i);       // (Interator.)list에 IEnumerable 있으니 가능한 부분
 
-            IEnumerator<int> iter = list.GetEnumerator();
+            IEnumerator<int> listIter = list.GetEnumerator();
 
             Console.WriteLine();
-            Console.WriteLine(iter.Current);
-            while (iter.MoveNext())                             // foreach와 같은 기능
+            Console.WriteLine(listIter.Current);
+            while (listIter.MoveNext())                             // foreach와 같은 기능
             {
-                Console.WriteLine(iter.Current);
+                Console.WriteLine(listIter.Current);
             }
-            Console.WriteLine(iter.Current);
-            iter.Dispose();
+            Console.WriteLine(listIter.Current);
+            listIter.Dispose();*/
 
-            /*
-            Iterator.LinkedList<int> linkedList = new Iterator.LinkedList<int>();
-            for (int i = 0; i < 5; i++) linkedList.AddLast(i);
+            // LinkedList 반복기
+            Interator.LinkedList<int> linkedList = new Interator.LinkedList<int>();
+            for (int i = 1; i <= 5; i++) linkedList.AddLast(i);
 
             foreach (int i in linkedList) Console.WriteLine(i);
 
             IEnumerator<int> linkedListIter = linkedList.GetEnumerator();
+
+            Console.WriteLine();
+            Console.WriteLine(linkedListIter.Current);
             while (linkedListIter.MoveNext())
             {
                 Console.WriteLine(linkedListIter.Current);
-            }*/
+            }
+            Console.WriteLine(linkedListIter.Current);
+            linkedListIter.Dispose();
         }
 
         /******************************************************
@@ -83,18 +89,6 @@ namespace _03._Iterator
             while (iter.MoveNext())                 // iter.Movenext가 true(값이 있을 때)일 때까지
             {
                 Console.WriteLine(iter.Current);
-            }
-        }
-        
-        public void Find(IEnumerable<int> container)
-        {
-            IEnumerator<int> iter = container.GetEnumerator();
-
-            iter.Reset();
-            while (iter.MoveNext())
-            {
-                if (iter.Current == 10)
-                    Console.WriteLine("10 찾았음");
             }
         }
 

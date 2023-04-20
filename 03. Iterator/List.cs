@@ -155,15 +155,17 @@ namespace Interator                                 // 기존 List와의 구분�
         public struct Enumerator : IEnumerator<T>
         {
             private List<T> list;
-            private int index;
             private T current;
+            private int index;
+            
             public T Current { get { return current; } }
 
             internal Enumerator(List<T> list)
             {
                 this.list = list;
-                this.index = 0;
                 this.current = default(T);
+                this.index = 0;
+                
             }
 
             object IEnumerator.Current
