@@ -182,6 +182,20 @@ namespace Iterator                                 // 기존 List와의 구분�
                 return 0;
         }
 
+        public void Average(List<int> list)
+        {
+            float aver = 0;
+            IEnumerator<int> listIter = list.GetEnumerator();
+            
+            while (listIter.MoveNext())                             // foreach와 같은 기능
+            {
+                Console.WriteLine(listIter.Current);
+                aver += listIter.Current;
+            }
+            aver /= (float)list.Count;
+            Console.WriteLine(aver);
+        }
+
         // ************************ 이하 반복기 부분 ***********************
 
         public IEnumerator<T> GetEnumerator()

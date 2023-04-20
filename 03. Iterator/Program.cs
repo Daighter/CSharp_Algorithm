@@ -8,9 +8,12 @@ namespace _03._Iterator
         {
             // List 반복기
             Iterator.List<int> list = new Iterator.List<int>();
-            for (int i = 1; i <= 5; i++) list.Add(i);
-            list.Remove(2);
+            for (int i = 1; i <= 5; i++) list.Add(i*i);
 
+            list.Average(list);
+
+            /*list.Remove(2);
+            
             foreach (int i in list) Console.WriteLine(i);       // (Iterator.)list에 IEnumerable 있으니 가능한 부분
 
             IEnumerator<int> listIter = list.GetEnumerator();
@@ -22,8 +25,8 @@ namespace _03._Iterator
                 Console.WriteLine(listIter.Current);
             }
             Console.WriteLine(listIter.Current);
-            listIter.Dispose();
-            
+            listIter.Dispose();*/
+            /*
             // LinkedList 반복기
             Iterator.LinkedList<int> linkedList = new Iterator.LinkedList<int>();
             for (int i = 1; i <= 5; i++) linkedList.AddLast(i);
@@ -40,7 +43,7 @@ namespace _03._Iterator
                 Console.WriteLine(linkedListIter.Current);
             }
             Console.WriteLine(linkedListIter.Current);
-            linkedListIter.Dispose();
+            linkedListIter.Dispose();*/
         }
 
         /******************************************************
