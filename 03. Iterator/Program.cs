@@ -7,7 +7,7 @@ namespace _03._Iterator
         static void Main(string[] args)
         {
             // List 반복기
-            IteratorL.List<int> list = new IteratorL.List<int>();
+            Iterator.List<int> list = new Iterator.List<int>();
             for (int i = 1; i <= 5; i++) list.Add(i);
             list.Remove(2);
 
