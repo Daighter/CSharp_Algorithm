@@ -5,16 +5,19 @@ namespace _03._Iterator
     internal class Program
     {
         static void Main(string[] args)
-        {/*
+        {
             // List 반복기
             Iterator.List<int> list = new Iterator.List<int>();
-            for (int i = 1; i <= 5; i++) list.Add(i*i);
+            /*for (int i = 1; i <= 5; i++) list.Add(i*i);
 
             list.Average(list);
 
             list.Remove(2);
             
             foreach (int i in list) Console.WriteLine(i);       // (Iterator.)list에 IEnumerable 있으니 가능한 부분
+            */
+            Random random = new Random();
+            for (int i = 0; i < 10; i++) { list.Add(random.Next(-100, 100)); }
 
             IEnumerator<int> listIter = list.GetEnumerator();
 
@@ -22,18 +25,22 @@ namespace _03._Iterator
             Console.WriteLine(listIter.Current);
             while (listIter.MoveNext())                             // foreach와 같은 기능
             {
-                Console.WriteLine(listIter.Current);
+                Console.Write(listIter.Current);
+                Console.Write(", ");
             }
-            Console.WriteLine(listIter.Current);
-            listIter.Dispose();*/
-            
+            Console.WriteLine();
+            listIter.Dispose();
+
+            list.Sort(list);
+
+            /*
             // LinkedList 반복기
             Iterator.LinkedList<int> linkedList = new Iterator.LinkedList<int>();
             for (int i = 1; i <= 5; i++) linkedList.AddLast(i*i);
 
             linkedList.Average(linkedList);
 
-            /*linkedList.Remove(3);
+            linkedList.Remove(3);
 
             foreach (int i in linkedList) Console.WriteLine(i);
 

@@ -30,7 +30,7 @@ namespace _03._Iterator
             }
         }
 
-        public static void Test()
+        public static void Sort()
         {
             int[] array = { 3, -2, 1, -4, 9, -8, 7, -6, 5 };
 

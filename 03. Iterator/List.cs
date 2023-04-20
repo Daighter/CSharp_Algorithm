@@ -141,9 +141,19 @@ namespace Iterator                                 // 기존 List와의 구분�
             size = 0;                               // 카운트는 0
         }
 
+        public void Sort(List<int> list)
+        {
+            Console.WriteLine();
+            Sort(list, AscendingOrder);
+            Console.WriteLine();
+            Sort(list, DescendingOrder);
+            Console.WriteLine();
+            Sort(list, AbsoluteOrder);
+        }
+
         // 정렬 함수
-        public delegate int Compare(T left, T right);
-        public static void Sort(List<T> list, Compare compare)
+        public delegate int Compare(int left, int right);
+        public static void Sort(List<int> list, Compare compare)
         {
             // 정렬알고리즘 Bubble Sort
             for (int i = 0; i < list.Count; i++)
@@ -152,11 +162,17 @@ namespace Iterator                                 // 기존 List와의 구분�
                 {
                     if (compare(list[i], list[j]) > 0)
                     {
-                        T temp = list[i];
+                        int temp = list[i];
                         list[i] = list[j];
                         list[j] = temp;
                     }
                 }
+            }
+            IEnumerator<int> listIter = list.GetEnumerator();
+            while (listIter.MoveNext())                             // foreach와 같은 기능
+            {
+                Console.Write(listIter.Current);
+                Console.Write(", ");
             }
         }
 
@@ -177,6 +193,17 @@ namespace Iterator                                 // 기존 List와의 구분�
             if (left < right)
                 return 1;
             else if (left > right)
+                return -1;
+            else
+                return 0;
+        }
+
+        // 절대값 정렬
+        public static int AbsoluteOrder(int left, int right)
+        {
+            if (Math.Abs(left) > Math.Abs(right))
+                return 1;
+            else if (Math.Abs(left) < Math.Abs(right))
                 return -1;
             else
                 return 0;
