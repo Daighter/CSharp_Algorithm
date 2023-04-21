@@ -8,6 +8,7 @@ namespace _230421
 {
     internal class BracketCalculator
     {
+        Stack<string> stack = new Stack<string>();
         private int openCount = 0;
         private int closeCount = 0;
         private bool correct = false;
@@ -27,7 +28,11 @@ namespace _230421
                 switch (c)
                 {
                     case '(':
+                        openCount++;
+                        break;
                     case '{':
+                        openCount++;
+                        break;
                     case '[':
                         openCount++;
                         break;
