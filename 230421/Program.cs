@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            // 괄호 계산기
+            BracketCalculator bracketCalculator = new BracketCalculator();
+            bracketCalculator.Result();
         }
     }
 }
