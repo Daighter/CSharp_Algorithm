@@ -1,4 +1,6 @@
-﻿namespace _230421
+﻿using System.Threading.Channels;
+
+namespace _230421
 {
     internal class Program
     {
@@ -6,7 +8,7 @@
         {/*
             // 괄호 계산기
             BracketCalculator bracketCalculator = new BracketCalculator();
-            bracketCalculator.Result();*/
+            bracketCalculator.Result();
 
             // 대기열 함수
             FastToStart waiting = new FastToStart();
@@ -29,7 +31,12 @@
             waiting.StartFastestPlayer();
 
             waiting.CurrentFastestPlayer();
-            waiting.NumberOfWaiting();
+            waiting.NumberOfWaiting();*/
+
+            // 요세푸스 순열
+            Josephus_permutation lastOne = new Josephus_permutation();
+            Console.Write("참가 인원 입력 : ");
+            lastOne.LastAliver(Console.ReadLine());
         }
     }
 }
