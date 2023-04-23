@@ -17,9 +17,9 @@ namespace _230421
             int totalPeople = int.Parse(str);                   // 참가인원 int형으로 형변환
             int defaultNum = 1;                                 // 초기 제곱수 변수
             int needKill = 0;                                   // 2의 제곱수가 남기까지 필요한 제거 수 변수
-            if (totalPeople >= 2)
+            if (totalPeople >= 2)                               // 참가인원이 2명 이상일 때
             {
-                for (int i = 0; defaultNum < totalPeople; i++)          // 반복 (2의 i승)
+                for (int i = 0; defaultNum < totalPeople; i++)      // 반복 (2의 i승)
                 {
                     if (totalPeople - defaultNum > defaultNum)          // 참가인원 - 현재 제곱수 값이 현재 제곱수 값보다 크면
                         defaultNum *= 2;                                    // 제곱수 승 증가
@@ -39,11 +39,8 @@ namespace _230421
                 //Console.WriteLine(defaultNum);
                 Console.WriteLine($"최후의 생존자 : {lastAliver}번");
             }
-            else
-            {
+            else                                                // 참가인원이 1명일 때
                 Console.WriteLine($"잠가인원이 부족합니다");
-            }
-            
         }
     }
 }
