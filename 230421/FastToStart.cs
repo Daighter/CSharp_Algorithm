@@ -14,21 +14,22 @@ namespace _230421
         public void AddPlayer(Player player)
         {
             players.Enqueue(player.Name);
+            Console.WriteLine($"대기열에 {player.Name} 추가");
         }
 
         public void StartFastestPlayer()
         {
-            Console.WriteLine(players.Dequeue());
+            Console.WriteLine($"유저 {players.Dequeue()} 실행");
         }
 
         public void CurrentFastestPlayer()
         {
-            Console.WriteLine(players.Peek());
+            Console.WriteLine($"다음 차례는 {players.Peek()}님 입니다.");
         }
 
         public void NumberOfWaiting()
         {
-            Console.WriteLine(players.Count);
+            Console.WriteLine($"현재 {players.Count}명 대기중 입니다.");
         }
     }
 
