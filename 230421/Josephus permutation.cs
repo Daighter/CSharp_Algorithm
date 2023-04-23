@@ -16,7 +16,7 @@ namespace _230421
         {
             int totalPeople = int.Parse(str);
             int defaultNum = 2;
-            while(true)
+            for (int i=1; defaultNum<totalPeople; i++)
             {
                 if (totalPeople - defaultNum > defaultNum)
                     defaultNum *= 2;
@@ -25,7 +25,8 @@ namespace _230421
             }
             // 확인용 출력
             Console.WriteLine(defaultNum);
-            lastNumber = defaultNum + 1;
+            int needKill = totalPeople - defaultNum;
+            lastNumber = needKill * 2 + 1;
             Console.WriteLine($"최후의 생존자 : {lastNumber}번");
         }
     }
