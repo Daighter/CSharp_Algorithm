@@ -8,14 +8,16 @@ namespace _230421
 {
     internal class FastToStart
     {
+        public FastToStart() { }
     }
 
-    public class Player
+    internal class Player
     {
         private string name;
         private int speed;
         public Player(string name)
         {
+            this.name = name;
             AddPlayer();
         }
 
