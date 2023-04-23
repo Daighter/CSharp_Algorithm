@@ -40,29 +40,34 @@ namespace _230421
                 Console.WriteLine($"최후의 생존자 : {lastAliver}번");
             }
             else                                                // 참가인원이 1명일 때
-                Console.WriteLine($"잠가인원이 부족합니다");
+                Console.WriteLine($"참가인원이 부족합니다");
         }
 
         public void TwoAliveOneKill(string str)
         {
             int totalPeople = int.Parse(str);                   // 참가인원 int형으로 형변환
-            int currentNum = 3;
-            int defaultNum = 2;
+            int currentNum = 3;                                 // 현재검사번호
+            int lastNumber = 2;                                 // 참가인원을 안넘는 3을 추가하는 수
+            // 현재검사번호 - 라스트원번호
 
-            if (totalPeople >= 3)                               // 참가인원이 3명 이상일 때
+            if (totalPeople < 3)                                // 참가인원이 2명 이하일 때
+                Console.WriteLine($"참가인원이 부족합니다");
+            else if (totalPeople == 3)                          // 참가인원이 3명일 때
+                Console.WriteLine($"최후의 생존자 : {lastNumber}번");
+            else                                                // 참가인원 4명 이상부터
             {
-                if (totalPeople == 3)                               // 참가인원이 3명일 때
-                    Console.WriteLine($"최후의 생존자 : {defaultNum}번");
-                else                                                // 참가인원 4명 이상부터
+                // 검사번호 +1
+                // 라스트원 +3
+
+                // 검사번호 - 라스트원 값이 0 이하일 때
+                    // 1일 경우
+                        // 1부터 시작
+                    // 같을 경우
+                        // 2부터 시작
+
+                while (currentNum - lastNumber > 2)
                 {
-                    while (totalPeople - currentNum <= 2)               // (참가인원 - 현재 번호) 값이 2 이하일 때 까지 반복
-                    {
-                        currentNum++;
-                        // 확인용 출력
-                        Console.Write($"{currentNum}, ");
-                    }
-                    
-                    switch (defaultNum)
+                    switch (lastNumber)
                     {
                         case 1:
                             break;
@@ -71,8 +76,6 @@ namespace _230421
                     }
                 }
             }
-            else                                                // 참가인원이 1명일 때
-                Console.WriteLine($"잠가인원이 부족합니다");
         }
     }
 }
