@@ -42,5 +42,37 @@ namespace _230421
             else                                                // 참가인원이 1명일 때
                 Console.WriteLine($"잠가인원이 부족합니다");
         }
+
+        public void TwoAliveOneKill(string str)
+        {
+            int totalPeople = int.Parse(str);                   // 참가인원 int형으로 형변환
+            int currentNum = 4;
+            int defaultNum = 2;
+
+            if (totalPeople >= 3)                               // 참가인원이 3명 이상일 때
+            {
+                if (totalPeople == 3)                               // 참가인원이 3명일 때
+                    Console.WriteLine($"최후의 생존자 : {defaultNum}번");
+                else                                                // 참가인원 4명 이상부터
+                {
+                    while (totalPeople - currentNum <= 2)               // (참가인원 - 현재 번호) 값이 2 이하일 때 까지 반복
+                    {
+                        currentNum++;
+                        // 확인용 출력
+                        Console.Write($"{currentNum}, ");
+                    }
+                    
+                    switch (defaultNum)
+                    {
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                    }
+                }
+            }
+            else                                                // 참가인원이 1명일 때
+                Console.WriteLine($"잠가인원이 부족합니다");
+        }
     }
 }
