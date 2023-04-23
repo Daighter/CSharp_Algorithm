@@ -10,6 +10,26 @@ namespace _230421
     {
         private Queue<string> players = new Queue<string>();
         public FastToStart() { }
+
+        public void AddPlayer(Player player)
+        {
+            players.Enqueue(player.Name);
+        }
+
+        public void StartFastestPlayer()
+        {
+            Console.WriteLine(players.Dequeue());
+        }
+
+        public void CurrentFastestPlayer()
+        {
+            Console.WriteLine(players.Peek());
+        }
+
+        public void NumberOfWaiting()
+        {
+            Console.WriteLine(players.Count);
+        }
     }
 
     internal class Player
@@ -19,5 +39,7 @@ namespace _230421
         {
             this.name = name;
         }
+        public string Name
+        { get { return name; } }
     }
 }
