@@ -36,7 +36,8 @@ namespace _230421
             // 요세푸스 순열
             Josephus_permutation lastOne = new Josephus_permutation();
             Console.Write("참가 인원 입력 : ");
-            lastOne.OneAliveOneKill(Console.ReadLine());
+            // lastOne.OneAliveOneKill(Console.ReadLine());
+            lastOne.TwoAliveOneKill(Console.ReadLine());
         }
     }
 }

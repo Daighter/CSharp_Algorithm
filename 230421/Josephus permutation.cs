@@ -46,7 +46,7 @@ namespace _230421
         public void TwoAliveOneKill(string str)
         {
             int totalPeople = int.Parse(str);                   // 참가인원 int형으로 형변환
-            int currentNum = 4;
+            int currentNum = 3;
             int defaultNum = 2;
 
             if (totalPeople >= 3)                               // 참가인원이 3명 이상일 때
