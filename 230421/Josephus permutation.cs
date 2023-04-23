@@ -45,14 +45,14 @@ namespace _230421
 
         // 3번째마다 제거하는 함수
         /*
-        3
-        2	
+        3   // 참가 인원(검사번호)
+        2	// 라스트 원
 
-        4	5	
-        1	4	
+        4	5	    6
+        1	4	    7
 
-        6	7	8	
-        1	4	7	
+        6	7	8	    9
+        1	4	7	    10
 
         9	10	11	12	13
         1	4	7	10	13
@@ -81,35 +81,39 @@ namespace _230421
         public void TwoAliveOneKill(string str)
         {
             int totalPeople = int.Parse(str);                   // 참가인원 int형으로 형변환
-            int currentNum = 3;                                 // 검사번호
-            int lastNumber = 2;                                 // 참가인원을 안넘는 3을 추가하는 수
-            // 현재검사번호 - 라스트원번호
+            int currentNum = 3;                                 // 최소인원 (이하 검사번호)
+            int lastNumber = 2;                                 // 최후의 1인 (이하 라스트원)
+            int subtracted;                                     // 검사번호 - 라스트원
 
-            if (totalPeople < 3)                                // 참가인원이 2명 이하일 때
+            if (totalPeople < currentNum)                       // 참가인원이 3명 미만일 때
                 Console.WriteLine($"참가인원이 부족합니다");
-            else if (totalPeople == 3)                          // 참가인원이 3명일 때
+            else if (totalPeople == currentNum)                 // 참가인원이 3명일 때
                 Console.WriteLine($"최후의 생존자 : {lastNumber}번");
             else                                                // 참가인원 4명 이상부터
             {
-                // 검사번호 +1
-                // 라스트원 +3
-
-                // 검사번호 - 라스트원 값이 0 이하일 때
-                    // 1일 경우
-                        // 1부터 시작
-                    // 같을 경우
-                        // 2부터 시작
-
-                while (currentNum - lastNumber > 2)
+                currentNum++;
+                while (currentNum <= totalPeople)                   // 참가인원까지 반복
                 {
-                    switch (lastNumber)
+                    lastNumber += 3;
+                    subtracted = currentNum - lastNumber;
+                    switch (subtracted)
                     {
-                        case 1:
+                        case -1:
+                            lastNumber = 1;
                             break;
-                        case 2:
+                        case -2:
+                            lastNumber = 2;
                             break;
+
                     }
+                    // 확인용 출력
+                    //Console.Write($"{currentNum}, ");
+                    //Console.WriteLine(lastNumber);
+
+                    currentNum++;
+                    
                 }
+                Console.WriteLine($"최후의 생존자 : {lastNumber}번");
             }
         }
     }
