@@ -11,9 +11,9 @@ namespace _230424_PriorityQueue
         private PriorityQueue<string, int> curePriority = new PriorityQueue<string, int>();
         public Emergency() { }
 
-        public void GetCurePriority()
+        public void EnQueuePatient(Patient patient)
         {
-
+            curePriority.Enqueue(patient.Name, patient.GoldenTime);
         }
     }
 
@@ -26,6 +26,9 @@ namespace _230424_PriorityQueue
             this.name = name;
             this.goldenTime = Random();
         }
+
+        public string Name { get { return name; } }
+        public int GoldenTime { get { return goldenTime; } }
 
         // 랜덤 골든타임 생성
         internal int Random()
