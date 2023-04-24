@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -115,6 +116,36 @@ namespace _230421
                 }
                 Console.WriteLine($"최후의 생존자 : {lastNumber}번");
             }
+        }
+
+        // 3번째마다 제거하는 요세푸스 Queue로 작성
+        public void TwoAliveOneKillQueue(string str)
+        {
+            Queue<int> TwoAOneK = new Queue<int>();         // Queue 클래스 인스턴스 선언
+            int totalPeople = int.Parse(str);               // 참가인원 int형변환
+            for (int i=1; i<=totalPeople; i++)              // Queue에 참가인원만큼 추가
+                TwoAOneK.Enqueue(i);
+
+            while(TwoAOneK.Count != 1)                      // Queue안에서 최후의 1인이 될때까지 반복
+            {
+                int moveTail;                               // 옮기는 용도의 변수
+                for (int i=0; i<3; i++)                     // 패턴 3 (2Alive -1Kill)
+                {
+                    switch(i)                               
+                    {
+                        case 0:                             // 첫번째와
+                        case 1:                             // 두번째는
+                            moveTail = TwoAOneK.Dequeue();      // 최전방에서 지우고
+                            TwoAOneK.Enqueue(moveTail);         // 뒤로 옮기기
+                            break;
+                        case 2:                             // 세번째는
+                            Console.WriteLine($"{TwoAOneK.Dequeue()}는 임포스터 였습니다."); // 나가리
+                            break;
+                    }
+                }
+            }
+            // 최후의 1인 출력
+            Console.WriteLine(TwoAOneK.Peek());
         }
     }
 }

@@ -37,7 +37,8 @@ namespace _230421
             Josephus_permutation lastOne = new Josephus_permutation();
             Console.Write("참가 인원 입력 : ");
             // lastOne.OneAliveOneKill(Console.ReadLine());
-            lastOne.TwoAliveOneKill(Console.ReadLine());
+            // lastOne.TwoAliveOneKill(Console.ReadLine());
+            lastOne.TwoAliveOneKillQueue(Console.ReadLine());
         }
     }
 }
