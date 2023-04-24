@@ -14,6 +14,7 @@ namespace _230424_PriorityQueue
         public void EnQueuePatient(Patient patient)
         {
             curePriority.Enqueue(patient.Name, patient.GoldenTime);
+            Console.WriteLine($"환자명 : {patient.Name}, 우선순위 : {patient.GoldenTime}");
         }
     }
 
