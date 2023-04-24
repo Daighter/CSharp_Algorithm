@@ -8,7 +8,7 @@ namespace _230424_PriorityQueue
 {
     internal class Emergency
     {
-        private PriorityQueue<string, int> curePriority = new PriorityQueue<string, int>();
+        public PriorityQueue<string, int> curePriority = new PriorityQueue<string, int>();
         public Emergency() { }
 
         public void EnQueuePatient(Patient patient)
