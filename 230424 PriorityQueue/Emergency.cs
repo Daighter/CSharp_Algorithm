@@ -9,8 +9,12 @@ namespace _230424_PriorityQueue
     internal class Emergency
     {
         private PriorityQueue<string, int> curePriority = new PriorityQueue<string, int>();
-        private List<int> goldenTimes = new List<int>();
         public Emergency() { }
+
+        public void GetCurePriority()
+        {
+
+        }
     }
 
     public class Patient
