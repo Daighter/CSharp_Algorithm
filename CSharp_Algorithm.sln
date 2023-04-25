@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. Iterator", "03. Iterato
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "230421", "230421\230421.csproj", "{E8328E78-34C2-45A3-9804-7E6E9C2314C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "230424 PriorityQueue", "230424 PriorityQueue\230424 PriorityQueue.csproj", "{B89B303D-C7BC-4D3B-BC4B-7F0E3B1B0699}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "230424 PriorityQueue", "230424 PriorityQueue\230424 PriorityQueue.csproj", "{B89B303D-C7BC-4D3B-BC4B-7F0E3B1B0699}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "230425 BinarySearchTree", "230425 BinarySearchTree\230425 BinarySearchTree.csproj", "{2E7B0D09-5673-4C0A-96DE-2442B89E816E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{B89B303D-C7BC-4D3B-BC4B-7F0E3B1B0699}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B89B303D-C7BC-4D3B-BC4B-7F0E3B1B0699}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B89B303D-C7BC-4D3B-BC4B-7F0E3B1B0699}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E7B0D09-5673-4C0A-96DE-2442B89E816E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E7B0D09-5673-4C0A-96DE-2442B89E816E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E7B0D09-5673-4C0A-96DE-2442B89E816E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E7B0D09-5673-4C0A-96DE-2442B89E816E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
