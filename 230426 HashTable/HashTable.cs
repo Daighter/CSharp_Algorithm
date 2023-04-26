@@ -37,18 +37,20 @@ namespace ReportStructure
                 {
                     if (key.Equals(table[index].key))                       // 3-1. 동일한 키값일 때
                     {
-                        return table[index].value;                              // 반환
+                        return table[index].value;                              // 해당 index의 데이터 반환
                     }
-                    if (table[index].state != Entry.State.Using)            // 3-2. index 자리가 비어있을 때
-                    {
+                    if (table[index].state != Entry.State.Using)            // 3-2. 키값이 다르고 index 자리가 비어있거나 삭제되었을 때
+                    {  
                         break;                                                  // 예외처리를 위해 탈출
                     }
 
                     index = index >= table.Length - 1 ? index + 1 : 0;      // 3-3. 다음 index으로 이동 (선형탐사)
                     // index가 해시테이블의 용량보다 크면 0으로 감
                 }
+                // while (table[index].state == Entry.State.Deleted)    // Deleted 일 때
+                // 탐사작업을 통해 계속 탐색해주어야 함
 
-                throw new KeyNotFoundException();                       // 예외처리
+                throw new KeyNotFoundException();                       // 예외처리 (비어있거나)
             }
             set
             {
@@ -60,7 +62,7 @@ namespace ReportStructure
                     {
                         table[index].value = value;                             // 덮어쓰기
                     }
-                    if (table[index].state != Entry.State.Using)            // 3-2. index 자리가 비어있을 때
+                    if (table[index].state != Entry.State.Using)            // 3-2. 키값이 다르고 index 자리가 비어있거나 제거되었을 때
                     {
                         break;                                                  // 예외처리를 위해 탈출
                     }
@@ -102,17 +104,21 @@ namespace ReportStructure
                 if (key.Equals(table[index].key))                       // 3-2. 동일한 키값알 때
                 {
                     table[index].state = Entry.State.Deleted;               // 지운상태로 표시
+                    return true;                                            // 성공 반환
                 }
-                if (table[index].state == Entry.State.None)             // 3-2. index 자리가 비어있을 때 (오류)
+                if (table[index].state == Entry.State.None ||           // 3-2. 키값이 다르고 index 자리가 비어있거나
+                    table[index].state == Entry.State.Deleted)          //      이미 삭제 되었을 때  (오류)
                 {
-                    break;                                                  // 에외처리를 위해 탈출
+                    break;                                                  // 실패처리를 위해 탈출
                 }
 
                 index = index >= table.Length - 1 ? index + 1 : 0;      // 3-3. 다음 index으로 이동 (선형탐사)
                 // index가 해시테이블의 용량보다 크면 0으로 감
             }
+            // while (table[index].state == Entry.State.Deleted)    // Deleted 일 때
+            // 탐사작업을 통해 계속 탐색해주어야 함
 
-            throw new InvalidOperationException();                  // 예외처리
+            return false;                                           // 실패 반환
         }
     }
 }
