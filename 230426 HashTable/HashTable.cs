@@ -16,7 +16,6 @@ namespace ReportStructure
             public enum State { None, Using, Deleted }          // 상태 열거형 { 비어있음, 사용중, 삭제됨(중복 데이터의 위치 추적을 위함) }
 
             public State state;                                 // 상태
-            public int hashCode;                                // 해시코드
             public TKey key;                                    // 키
             public TValue value;                                // 데이터
         }
@@ -88,8 +87,7 @@ namespace ReportStructure
                 // index가 해시테이블의 용량보다 크면 0으로 감
             }
 
-            table[index].hashCode = key.GetHashCode();              // 3. 사용중이 아닌 index를 발견한 경우 그 위치에 저★장
-            table[index].key = key;
+            table[index].key = key;                                 // 3. 사용중이 아닌 index를 발견한 경우 그 위치에 저★장
             table[index].value = value;
             table[index].state = Entry.State.Using;
         }
