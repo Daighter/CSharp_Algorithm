@@ -15,7 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "230424 PriorityQueue", "230
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "230425 BinarySearchTree", "230425 BinarySearchTree\230425 BinarySearchTree.csproj", "{2E7B0D09-5673-4C0A-96DE-2442B89E816E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "230426 HashTable", "230426 HashTable\230426 HashTable.csproj", "{FD727CD3-8D5D-4800-A26A-720703CB1790}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "230426 HashTable", "230426 HashTable\230426 HashTable.csproj", "{FD727CD3-8D5D-4800-A26A-720703CB1790}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "230427", "230427", "{1AF2FB5A-CEFC-44C5-B3A2-4DFB098D00F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hanoi", "Hanoi\Hanoi.csproj", "{74AD6AB5-F956-40F9-997A-6DE12BF545B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,9 +55,16 @@ Global
 		{FD727CD3-8D5D-4800-A26A-720703CB1790}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD727CD3-8D5D-4800-A26A-720703CB1790}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD727CD3-8D5D-4800-A26A-720703CB1790}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74AD6AB5-F956-40F9-997A-6DE12BF545B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74AD6AB5-F956-40F9-997A-6DE12BF545B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74AD6AB5-F956-40F9-997A-6DE12BF545B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74AD6AB5-F956-40F9-997A-6DE12BF545B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{74AD6AB5-F956-40F9-997A-6DE12BF545B6} = {1AF2FB5A-CEFC-44C5-B3A2-4DFB098D00F4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7C05A8BA-87AF-43DD-B9E5-2FD56D760BE5}
