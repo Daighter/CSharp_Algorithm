@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumberTriangle", "NumberTri
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "230428 Sorting", "230428 Sorting\230428 Sorting.csproj", "{A7AA02CE-662D-47CF-BCC8-652C036AA216}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "230502 ShortestPath", "230502\230502 ShortestPath.csproj", "{E1F2738B-E3E5-4263-8F80-A2F08A29CA0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "230502 ShortestPath", "230502\230502 ShortestPath.csproj", "{E1F2738B-E3E5-4263-8F80-A2F08A29CA0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "230503 AStar", "230503\230503 AStar.csproj", "{CBEE407D-B5EA-40AB-9425-39CB38A58976}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +85,10 @@ Global
 		{E1F2738B-E3E5-4263-8F80-A2F08A29CA0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1F2738B-E3E5-4263-8F80-A2F08A29CA0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1F2738B-E3E5-4263-8F80-A2F08A29CA0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBEE407D-B5EA-40AB-9425-39CB38A58976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBEE407D-B5EA-40AB-9425-39CB38A58976}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBEE407D-B5EA-40AB-9425-39CB38A58976}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBEE407D-B5EA-40AB-9425-39CB38A58976}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
