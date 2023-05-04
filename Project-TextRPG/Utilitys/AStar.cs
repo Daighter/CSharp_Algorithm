@@ -109,7 +109,7 @@ namespace Project_TextRPG.Utilitys
         }
 
         // 휴리스틱 (Heuristic) : 최상의 경로를 추정하는 순위값, 휴리스틱에 의해 경로탐색 효율이 결정됨
-        private static int Heuristic(Position start, Position end)
+        public static int Heuristic(Position start, Position end)
         {
             int xSize = Math.Abs(start.x - end.x);  // 가로로 가야하는 횟수
             int ySize = Math.Abs(start.y - end.y);  // 세로로 가야하는 횟수

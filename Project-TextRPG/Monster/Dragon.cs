@@ -9,7 +9,6 @@ namespace Project_TextRPG
 {
     public class Dragon : Monster
     {
-        private Random random = new Random();
         private int moveTurn = 0;
 
         public Dragon()
@@ -22,12 +21,12 @@ namespace Project_TextRPG
             dp = 10;
 
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("####################");
-            sb.AppendLine("#                  #");
+            sb.AppendLine("#####################");
+            sb.AppendLine("#                   #");
             sb.AppendLine("#  (엄청난 드래곤)  #");
             sb.AppendLine("#  (텍스트 이미지)  #");
-            sb.AppendLine("#                  #");
-            sb.AppendLine("####################");
+            sb.AppendLine("#                   #");
+            sb.AppendLine("#####################");
             image = sb.ToString();
         }
 

@@ -45,7 +45,7 @@ namespace Project_TextRPG
         private int moveTurn = 0;
         public override void MoveAction()
         {
-            if (moveTurn++ < 2)
+            if (moveTurn++ < 3)
             {
                 return;
             }
