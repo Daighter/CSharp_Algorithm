@@ -13,8 +13,8 @@ namespace Project_TextRPG
         public Slime()
         {
             name = "슬라임";
-            curHp = 10;
-            maxHp = 10;
+            curHp = 20;
+            maxHp = 20;
             ap = 3;
             dp = 0;
 

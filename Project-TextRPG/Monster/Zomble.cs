@@ -18,7 +18,7 @@ namespace Project_TextRPG
             curHp = 50;
             maxHp = 50;
             ap = 5;
-            dp = 3;
+            dp = 1;
 
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("#####################");
@@ -39,7 +39,7 @@ namespace Project_TextRPG
             moveTurn = 0;
 
             List<Position> path;
-            if (AStar.Heuristic(new Position(pos.x, pos.y), new Position(Data.player.pos.x, Data.player.pos.y)) < 100)
+            if (AStar.Heuristic(new Position(pos.x, pos.y), new Position(Data.player.pos.x, Data.player.pos.y)) < 50)
             {
                 if (!AStar.PathFinding(in Data.map, new Position(pos.x, pos.y), new Position(Data.player.pos.x, Data.player.pos.y), out path))
                     return;

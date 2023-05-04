@@ -39,11 +39,11 @@ namespace Project_TextRPG
                 { false,  true,  true,  true, false, false, false, false,  true,  true,  true,  true,  true, false },
                 { false,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true, false },
                 { false,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true, false },
-                { false,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true, false,  true, false },
-                { false,  true, false,  true,  true,  true,  true,  true,  true,  true,  true, false,  true, false },
-                { false,  true, false,  true,  true,  true,  true,  true,  true,  true,  true, false,  true, false },
-                { false,  true, false,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true, false },
-                { false,  true, false,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true, false },
+                { false,  true,  true,  true,  true, false, false, false, false,  true,  true, false,  true, false },
+                { false,  true, false,  true,  true, false,  true,  true, false,  true,  true, false,  true, false },
+                { false,  true, false,  true,  true, false,  true,  true, false, false, false, false,  true, false },
+                { false,  true, false,  true,  true, false,  true,  true,  true,  true,  true,  true,  true, false },
+                { false,  true, false,  true,  true, false,  true,  true,  true,  true,  true,  true,  true, false },
                 { false, false, false, false, false, false, false, false, false, false, false, false, false, false },
             };
 
@@ -61,7 +61,7 @@ namespace Project_TextRPG
             monsters.Add(slime2);
 
             Zomble zombie = new Zomble();
-            zombie.pos = new Position(10, 10);
+            zombie.pos = new Position(6, 11);
             monsters.Add(zombie);
 
             Dragon dragon = new Dragon();
