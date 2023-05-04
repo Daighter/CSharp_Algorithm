@@ -60,6 +60,10 @@ namespace Project_TextRPG
             slime2.pos = new Position(7, 5);
             monsters.Add(slime2);
 
+            Zomble zombie = new Zomble();
+            zombie.pos = new Position(10, 10);
+            monsters.Add(zombie);
+
             Dragon dragon = new Dragon();
             dragon.pos = new Position(12, 12);
             monsters.Add(dragon);
