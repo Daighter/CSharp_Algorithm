@@ -13,6 +13,7 @@ namespace Profect.TextRPG.Myself
 
         private Scene curScene;
         private MainMenuScene mainMenuScene;
+        private MapScene mapScene;
 
         public void Run()
         {
@@ -31,7 +32,9 @@ namespace Profect.TextRPG.Myself
         // 게임 초기화
         private void Init()
         {
+            Data.Init();
             mainMenuScene = new MainMenuScene(this);
+            mapScene = new MapScene(this);
 
             curScene = mainMenuScene;
         }
@@ -58,13 +61,14 @@ namespace Profect.TextRPG.Myself
         // 게임 시작
         public void GameStart()
         {
-            Console.WriteLine("게임 시작");
+            curScene = mapScene;
+            mapScene.GenerateMap();
         }
 
         // 맵으로 씬 이동
         public void Map()
         {
-            Console.WriteLine("맵 이동");
+            curScene = mapScene;
         }
 
         // 게임 종료
