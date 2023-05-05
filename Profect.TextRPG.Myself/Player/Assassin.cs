@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Profect.TextRPG.Myself
 {
-    internal class Warrior : Player
+    internal class Assassin : Player
     {
-        public Warrior(string name) : base(name)
+        public Assassin(string name) : base(name)
         {
             this.name = name;
-            this.job = "전사";
-            this.maxHp = 120;
+            this.job = "암살자";
+            this.maxHp = 100;
             this.curHp = maxHp;
-            this.ap = 10;
-            this.dp = 15;
-            this.maxMp = 50;
+            this.ap = 20;
+            this.dp = 5;
+            this.maxMp = 100;
             this.curMp = maxMp;
         }
     }

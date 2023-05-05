@@ -17,7 +17,7 @@ namespace Profect.TextRPG.Myself
             PrintMenu();                        // 인터페이스 출력
             PrintInfo();                        // 현재 정보 출력
 
-            Console.SetCursorPosition(0, Data.map.GetLength(0) + 1);        // 커서 고정용
+            Console.SetCursorPosition(0, Data.map.GetLength(0) + 3);        // 커서 고정용
         }
 
         // Scene 오버라이드
@@ -86,7 +86,11 @@ namespace Profect.TextRPG.Myself
         // 현재 정보 출력
         private void PrintInfo()
         {
-
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.SetCursorPosition(0, Data.map.GetLength(0) + 1);
+            Console.WriteLine($"이름 : {Data.player.Name}    직업 : {Data.player.Job}");
+            Console.Write($"HP : {Data.player.CurHp,3}/{Data.player.MaxHp,3}\t");
+            Console.Write($"MP : {Data.player.CurMp,3}/{Data.player.MaxMp,3}");
         }
 
         // 맵 할당

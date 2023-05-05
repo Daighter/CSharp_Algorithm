@@ -12,6 +12,7 @@ namespace Profect.TextRPG.Myself
     internal abstract class Player
     {
         protected string name;
+        protected string job;
         protected string image;
         protected char icon = '★';
         protected Position pos;
@@ -43,14 +44,15 @@ namespace Profect.TextRPG.Myself
         }
 
         public string Name { get { return name; } }
+        public string Job { get { return job; } }
         public char Icon { get { return icon; } }
         public Position Pos { get { return pos; } set { pos = value; } }
         public int CurHp { get { return curHp; } }
         public int MaxHp { get { return maxHp; } }
         public int AP { get { return ap; } }
         public int DP { get { return dp; } }
-        public int MaxMP { get { return maxMp; } }
-        public int CurMP { get { return curMp; } }
+        public int MaxMp { get { return maxMp; } }
+        public int CurMp { get { return curMp; } }
 
         // 이동
         public void Move(Direction dir)

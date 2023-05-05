@@ -25,6 +25,10 @@ namespace Profect.TextRPG.Myself
                 case ConsoleKey.NumPad1:
                     player = new Warrior(name);
                     break;
+                case ConsoleKey.D2:
+                case ConsoleKey.NumPad2:
+                    player = new Assassin(name);
+                    break;
             }
         }
 
