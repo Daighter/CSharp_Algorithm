@@ -16,6 +16,8 @@ namespace Profect.TextRPG.Myself
             PrintMap();                         // 맵 출력
             PrintMenu();                        // 인터페이스 출력
             PrintInfo();                        // 현재 정보 출력
+
+            Console.SetCursorPosition(0, Data.map.GetLength(0) + 1);        // 커서 고정용
         }
 
         // Scene 오버라이드

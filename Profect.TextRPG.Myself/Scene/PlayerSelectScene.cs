@@ -58,7 +58,11 @@ namespace Profect.TextRPG.Myself
             }
 
             if (input.Key == ConsoleKey.Escape)                                     // ESC이면
+            {
+                Console.SetCursorPosition(0, 0);                                        // ESC 깨짐 방지
+                Console.WriteLine("1");
                 game.MainMenu();                                                        // 메인메뉴로
+            }
             else if (input.Key == ConsoleKey.D1 || input.Key == ConsoleKey.NumPad1) // 1번(넘패드 포함)일 때
             {
                 charactor = input;
@@ -69,8 +73,8 @@ namespace Profect.TextRPG.Myself
                 Console.WriteLine();
                 Console.WriteLine($"정말 '{name}'(으)로 하시겠습니까? ");
                 Console.WriteLine("Next To Press Enter.");
-                Console.WriteLine("cancel To Press ESC.");
-                
+                Console.WriteLine("Cancel To Press ESC.");
+
                 while (true)
                 {
                     input = Console.ReadKey();
