@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "230502 ShortestPath", "2305
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "230503 AStar", "230503\230503 AStar.csproj", "{CBEE407D-B5EA-40AB-9425-39CB38A58976}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-TextRPG", "Project-TextRPG\Project-TextRPG.csproj", "{D25AE0C1-7DC3-4F73-A1B1-A9D7A58DB6A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project-TextRPG", "Project-TextRPG\Project-TextRPG.csproj", "{D25AE0C1-7DC3-4F73-A1B1-A9D7A58DB6A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Profect.TextRPG.Myself", "Profect.TextRPG,Myself\Profect.TextRPG.Myself.csproj", "{DCE541F3-CF49-4F0B-9567-636E77EE3DAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +97,10 @@ Global
 		{D25AE0C1-7DC3-4F73-A1B1-A9D7A58DB6A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D25AE0C1-7DC3-4F73-A1B1-A9D7A58DB6A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D25AE0C1-7DC3-4F73-A1B1-A9D7A58DB6A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCE541F3-CF49-4F0B-9567-636E77EE3DAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCE541F3-CF49-4F0B-9567-636E77EE3DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCE541F3-CF49-4F0B-9567-636E77EE3DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCE541F3-CF49-4F0B-9567-636E77EE3DAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
