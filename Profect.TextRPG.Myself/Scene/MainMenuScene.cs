@@ -52,7 +52,7 @@ namespace Profect.TextRPG.Myself
             switch (command)                                    // 정수형이면
             {
                 case 1:
-                    game.GameStart();
+                    game.PlayerSelect();
                     break;
                 case 2:
                     if (canParse)                                       // 일시정지 상태일 때만

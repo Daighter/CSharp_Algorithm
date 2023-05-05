@@ -13,6 +13,7 @@ namespace Profect.TextRPG.Myself
 
         private Scene curScene;
         private MainMenuScene mainMenuScene;
+        private PlayerSelectScene playerSelectScene;
         private MapScene mapScene;
 
         public void Run()
@@ -34,6 +35,7 @@ namespace Profect.TextRPG.Myself
         {
             Data.Init();
             mainMenuScene = new MainMenuScene(this);
+            playerSelectScene = new PlayerSelectScene(this);
             mapScene = new MapScene(this);
 
             curScene = mainMenuScene;
@@ -63,12 +65,6 @@ namespace Profect.TextRPG.Myself
         {
             curScene = mapScene;
             mapScene.GenerateMap();
-        }
-
-        // 맵으로 씬 이동
-        public void Map()
-        {
-            curScene = mapScene;
         }
 
         // 게임 종료
@@ -116,7 +112,24 @@ namespace Profect.TextRPG.Myself
                     Thread.Sleep(1000);
                     break;
             }
-            
+        }
+
+        // 메인메뉴로 이동
+        public void MainMenu()
+        {
+            curScene = mainMenuScene;
+        }
+
+        // 캐릭터 선택 씬으로 이동
+        public void PlayerSelect()
+        {
+            curScene = playerSelectScene;
+        }
+
+        // 맵으로 씬 이동
+        public void Map()
+        {
+            curScene = mapScene;
         }
     }
 }
