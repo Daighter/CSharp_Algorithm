@@ -42,6 +42,9 @@ namespace Profect.TextRPG.Myself
             image = sb.ToString();
         }
 
+        public string Name { get { return name; } }
+        public char Icon { get { return icon; } }
+        public Position Pos { get { return pos; } set { pos = value; } }
         public int CurHp { get { return curHp; } }
         public int MaxHp { get { return maxHp; } }
         public int AP { get { return ap; } }

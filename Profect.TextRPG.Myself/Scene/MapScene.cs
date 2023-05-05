@@ -21,7 +21,34 @@ namespace Profect.TextRPG.Myself
         // Scene 오버라이드
         public override void Update()
         {
-            string input = Console.ReadLine();
+            ConsoleKeyInfo input;
+
+            while (true)
+            {
+                input = Console.ReadKey();
+
+                if (input.Key == ConsoleKey.UpArrow ||
+                    input.Key == ConsoleKey.DownArrow ||
+                    input.Key == ConsoleKey.LeftArrow ||
+                    input.Key == ConsoleKey.RightArrow)
+                    break;
+            }
+
+            switch (input.Key)
+            {
+                case ConsoleKey.UpArrow:
+                    Data.player.Move(Direction.Up);
+                    break;
+                case ConsoleKey.DownArrow:
+                    Data.player.Move(Direction.Down);
+                    break;
+                case ConsoleKey.LeftArrow:
+                    Data.player.Move(Direction.Left);
+                    break;
+                case ConsoleKey.RightArrow:
+                    Data.player.Move(Direction.Right);
+                    break;
+            }
         }
 
         // 맵 출력
@@ -41,6 +68,11 @@ namespace Profect.TextRPG.Myself
                 sb.AppendLine();                                    // 출바꿈
             }
             Console.WriteLine(sb.ToString());
+
+            // 플레이어 출력
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.SetCursorPosition(Data.player.Pos.x * 2, Data.player.Pos.y);
+            Console.Write(Data.player.Icon);
         }
 
         // 인터페이스 출력
@@ -58,7 +90,7 @@ namespace Profect.TextRPG.Myself
         // 맵 할당
         public void GenerateMap()
         {
-            Data.map = Stage1.map;
+            Data.LoadLevel1();
         }
     }
 }
