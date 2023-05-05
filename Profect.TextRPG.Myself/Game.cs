@@ -10,6 +10,9 @@ namespace Profect.TextRPG.Myself
     {
         private bool running = true;
 
+        private Scene curScene;
+        private MainMenuScene mainMenuScene;
+
         public void Run()
         {
             Init();                 // 초기화
@@ -44,6 +47,24 @@ namespace Profect.TextRPG.Myself
 
         // 게임 마무리
         private void Release()
+        {
+
+        }
+
+        // 게임 시작
+        public void GameStart()
+        {
+
+        }
+
+        // 맵으로 씬 이동
+        public void Map()
+        {
+
+        }
+
+        // 게임 종료
+        public void GameOver()
         {
 
         }

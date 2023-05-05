@@ -8,7 +8,12 @@ namespace Profect.TextRPG.Myself
 {
     internal abstract class Scene
     {
-        public Scene() { }
+        protected Game game;
+
+        public Scene(Game game)
+        {
+            this.game = game;
+        }
 
         public abstract void Render();
 
