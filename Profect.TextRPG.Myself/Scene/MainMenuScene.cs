@@ -31,7 +31,7 @@ namespace Profect.TextRPG.Myself
                 sb.AppendLine("2. 이어하기");
                 sb.AppendLine("0. 게임종료").AppendLine();
             }
-            sb.AppendLine("메뉴를 선택하세요 : ");
+            sb.Append("메뉴를 선택하세요 : ");
 
             Console.Write(sb.ToString());
         }

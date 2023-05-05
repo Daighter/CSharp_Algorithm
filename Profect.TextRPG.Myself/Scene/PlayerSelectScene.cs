@@ -95,8 +95,6 @@ namespace Profect.TextRPG.Myself
                     this.Render();                                                          // 선택지 출력
                 }
             }
-
-            
         }
     }
 }
