@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace Profect.TextRPG.Myself
@@ -67,7 +68,7 @@ namespace Profect.TextRPG.Myself
         }
 
         // 게임 종료
-        public void GameOver(string text = "")
+        public void GameOver()
         {
             Console.Clear();
 
@@ -82,11 +83,36 @@ namespace Profect.TextRPG.Myself
             sb.AppendLine();
 
             sb.AppendLine();
-            sb.Append(text);
+            sb.AppendLine("다시 하시겠습니까?");
+            sb.AppendLine("다시 시작 : 1");
+            sb.AppendLine("종료      : 0");
 
             Console.WriteLine(sb.ToString());
 
-            running = false;
+            string input = Console.ReadLine();
+
+            int command;
+            if (!int.TryParse(input, out command))
+            {
+                Console.WriteLine("잘못 입력 하셨습니다.");
+                Thread.Sleep(1000);
+                return;
+            }
+            
+            switch (command)
+            {
+                case 1:
+                    this.Run();
+                    break;
+                case 0:
+                    running = false;
+                    break;
+                default:
+                    Console.WriteLine("잘못 입력 하셨습니다.");
+                    Thread.Sleep(1000);
+                    break;
+            }
+            
         }
     }
 }
