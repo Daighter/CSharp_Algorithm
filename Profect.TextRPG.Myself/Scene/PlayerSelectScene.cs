@@ -31,6 +31,7 @@ namespace Profect.TextRPG.Myself
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine();
+            Thread.Sleep(500);
             sb.Append("이름을 입력하세요 : ");
 
             Console.Write(sb.ToString());
@@ -71,7 +72,7 @@ namespace Profect.TextRPG.Myself
                 charactor = input;
                 RenderSetName();                                                            // 이름 입력 문구 출력
                 string name = Console.ReadLine();                                               // 입력 받고
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
 
                 Console.WriteLine();
                 Console.WriteLine($"정말 '{name}'(으)로 하시겠습니까? ");
