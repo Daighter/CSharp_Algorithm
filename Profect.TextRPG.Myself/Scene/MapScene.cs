@@ -29,11 +29,20 @@ namespace Profect.TextRPG.Myself
             {
                 input = Console.ReadKey();
 
-                if (input.Key == ConsoleKey.UpArrow ||
+                if (input.Key == ConsoleKey.R ||
+                    input.Key == ConsoleKey.UpArrow ||
                     input.Key == ConsoleKey.DownArrow ||
                     input.Key == ConsoleKey.LeftArrow ||
                     input.Key == ConsoleKey.RightArrow)
                     break;
+            }
+
+            // R버튼으로 일시정지
+            if (input.Key == ConsoleKey.R)
+            {
+                MainMenuScene.CanParse = true;
+                game.MainMenu();
+                return;
             }
 
             // 플레이어 이동
@@ -96,7 +105,12 @@ namespace Profect.TextRPG.Myself
         // 인터페이스 출력
         private void PrintMenu()
         {
-            
+            Console.ForegroundColor = ConsoleColor.White;
+            (int left, int top) pos = Console.GetCursorPosition();
+            Console.SetCursorPosition(Data.map.GetLength(1) + 15, 1);
+            Console.Write("메뉴 : R");
+            Console.SetCursorPosition(Data.map.GetLength(1) + 15, 3);
+            Console.Write("이동 : 방향키");
         }
 
         // 현재 정보 출력

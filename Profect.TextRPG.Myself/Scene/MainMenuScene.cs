@@ -8,12 +8,11 @@ namespace Profect.TextRPG.Myself
 {
     internal class MainMenuScene : Scene
     {
-        private bool canParse = false;                  // 일시정지 (메인메뉴 이어하기 선택지 구분용)
+        private static bool canParse = false;                  // 일시정지 (메인메뉴 이어하기 선택지 구분용)
 
-        public MainMenuScene(Game game) : base(game)
-        {
+        public MainMenuScene(Game game) : base(game) { }
 
-        }
+        public static bool CanParse { set { canParse = value; } }
 
         // Scene 오버라이드
         public override void Render()
