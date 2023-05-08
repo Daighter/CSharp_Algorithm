@@ -107,9 +107,9 @@ namespace Profect.TextRPG.Myself
         {
             Console.ForegroundColor = ConsoleColor.White;
             (int left, int top) pos = Console.GetCursorPosition();
-            Console.SetCursorPosition(Data.map.GetLength(1) + 15, 1);
+            Console.SetCursorPosition(Data.map.GetLength(1) + 16, 1);
             Console.Write("메뉴 : R");
-            Console.SetCursorPosition(Data.map.GetLength(1) + 15, 3);
+            Console.SetCursorPosition(Data.map.GetLength(1) + 16, 3);
             Console.Write("이동 : 방향키");
         }
 
