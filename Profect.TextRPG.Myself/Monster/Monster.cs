@@ -21,6 +21,7 @@ namespace Profect.TextRPG.Myself
         public Monster() { }
 
         public string Name { get { return name; } }
+        public string Image { get { return image; } }
         public char Icon { get { return icon; } }
         public Position Pos { get { return pos; } set { pos = value; } }
         public int CurHp { get { return curHp; } }

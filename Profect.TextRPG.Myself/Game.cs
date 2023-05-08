@@ -15,6 +15,7 @@ namespace Profect.TextRPG.Myself
         private MainMenuScene mainMenuScene;
         private PlayerSelectScene playerSelectScene;
         private MapScene mapScene;
+        private BattleScene battleScene;
 
         public void Run()
         {
@@ -37,6 +38,7 @@ namespace Profect.TextRPG.Myself
             mainMenuScene = new MainMenuScene(this);
             playerSelectScene = new PlayerSelectScene(this);
             mapScene = new MapScene(this);
+            battleScene = new BattleScene(this);
 
             curScene = mainMenuScene;
         }
@@ -130,6 +132,13 @@ namespace Profect.TextRPG.Myself
         public void Map()
         {
             curScene = mapScene;
+        }
+
+        // 전투 씬으로 이동
+        public void Battle(Monster monster)
+        {
+            curScene = battleScene;
+            battleScene.StartBattle(monster);
         }
     }
 }

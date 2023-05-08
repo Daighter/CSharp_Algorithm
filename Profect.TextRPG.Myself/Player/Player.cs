@@ -45,6 +45,7 @@ namespace Profect.TextRPG.Myself
 
         public string Name { get { return name; } }
         public string Job { get { return job; } }
+        public string Image { get { return image; } }
         public char Icon { get { return icon; } }
         public Position Pos { get { return pos; } set { pos = value; } }
         public int CurHp { get { return curHp; } }

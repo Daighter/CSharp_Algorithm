@@ -62,10 +62,24 @@ namespace Profect.TextRPG.Myself
                     break;
             }
 
-            // 몬스터 이동
-            foreach (Monster monster in Data.monsters)
+            // 몬스터를 만나면 전투
+            Monster monster = Data.MonsterInPos(Data.player.Pos);
+            if (monster != null)                // 몬스터의 위치에 플레이어가 겹치면
             {
-                monster.MoveAction();
+                game.Battle(monster);               // 그 몬스터와 전투
+                return;
+            }
+
+            // 몬스터 이동
+            foreach (Monster m in Data.monsters)
+            {
+                m.MoveAction();
+                if (m.Pos.x == Data.player.Pos.x &&     // 몬스터가 이동한 자리에
+                    m.Pos.y == Data.player.Pos.y)       // 플레이어가 있으면
+                {
+                    game.Battle(m);                         // 전투 시작
+                    return;
+                }
             }
         }
 
