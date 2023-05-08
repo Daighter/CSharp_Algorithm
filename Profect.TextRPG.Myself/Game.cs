@@ -70,7 +70,7 @@ namespace Profect.TextRPG.Myself
         }
 
         // 게임 종료
-        public void GameOver()
+        public void GameOver(string text = "")
         {
             Console.Clear();
 
@@ -83,6 +83,7 @@ namespace Profect.TextRPG.Myself
             sb.AppendLine("  *   * *   * *   * *          *   *  * *  *     *  *   ");
             sb.AppendLine("   ***  *   * *   * *****       ***    *   ***** *   *  ");
             sb.AppendLine();
+            sb.AppendLine(text);
 
             sb.AppendLine();
             sb.AppendLine("다시 하시겠습니까?");

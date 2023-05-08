@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Profect.TextRPG.Myself
 {
@@ -74,13 +75,27 @@ namespace Profect.TextRPG.Myself
 
         public void Attack(Player player)
         {
+            Console.WriteLine($"{name}이(가) {player.Name}을(를) 공격합니다.");
+            Thread.Sleep(2000);
             player.TakeDamage(ap);
         }
 
         public void TakeDamage(int ap)
         {
             if (ap - dp > 0)
+            {
+                Console.WriteLine($"{name}은(는) {ap - dp}의 데미지를 받았다.");
                 curHp -= ap - dp;
+            }
+            else
+                Console.WriteLine($"공격은 {name}에게 먹히지 않았다.");
+            Thread.Sleep(2000);
+
+            if (curHp <= 0)
+            {
+                Console.WriteLine($"{name}은(는) 쓰러졌다!");
+                Thread.Sleep(2000);
+            }
         }
     }
 }

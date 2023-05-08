@@ -28,7 +28,42 @@ namespace Profect.TextRPG.Myself
 
         public override void Update()
         {
+            Console.WriteLine("1. 공격하기");
+            Console.WriteLine();
+            Console.Write("명령을 입력하세요 : ");
+
             string input = Console.ReadLine();
+
+            int index;
+            if (!int.TryParse(input, out index))
+            {
+                Console.WriteLine("잘못 입력하셨습니다.");
+                return;
+            }
+            if (index < 1 || index > 1)
+            {
+                Console.WriteLine("잘못 입력하셨습니다.");
+                return;
+            }
+            else
+                Data.player.Attack(monster);
+
+            // 플레이어 공격 후
+            if (monster.CurHp <= 0)
+            {
+                EndBattle();
+                return;
+            }
+
+            // 몬스터 턴
+            monster.Attack(Data.player);
+
+            // 몬스터 공격 후
+            if (Data.player.CurHp <= 0)
+            {
+                game.GameOver("몬스터에게 패배했습니다.");
+                return;
+            }
         }
 
         public void StartBattle(Monster monster)
@@ -39,6 +74,15 @@ namespace Profect.TextRPG.Myself
             Console.Clear();
             Console.WriteLine($"야생의 {monster.Name}이(가) 나타났다!");
             Thread.Sleep(1000);
+        }
+
+        public void EndBattle()
+        {
+            Console.Clear();
+            Console.WriteLine("전투에서 승리했다!");
+
+            Thread.Sleep(2000);
+            game.Map();
         }
     }
 }

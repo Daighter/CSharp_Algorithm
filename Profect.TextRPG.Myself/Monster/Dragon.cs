@@ -14,8 +14,8 @@ namespace Profect.TextRPG.Myself
             icon = '※';
             curHp = 100;
             maxHp = 100;
-            ap = 15;
-            dp = 10;
+            ap = 30;
+            dp = 15;
 
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("#####################");
