@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Profect.TextRPG.Myself.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Profect.TextRPG.Myself
 {
-    internal abstract class Player
+    internal abstract class Player : IAttackableMonster, IHitable
     {
         protected string name;
         protected string job;
@@ -79,6 +80,17 @@ namespace Profect.TextRPG.Myself
             {
                 pos = prevPos;                  // 저장위치로 복귀
             }
+        }
+
+        public void Attack(Monster monster)
+        {
+            monster.TakeDamage(ap);
+        }
+
+        public void TakeDamage(int ap)
+        {
+            if (ap - dp > 0)
+                curHp -= ap - dp;
         }
     }
 }

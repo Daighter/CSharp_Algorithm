@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Profect.TextRPG.Myself.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Profect.TextRPG.Myself
 {
-    internal abstract class Monster
+    internal abstract class Monster : IAttackablePlayer, IHitable
     {
         protected string name;
         protected string image;
@@ -31,6 +32,7 @@ namespace Profect.TextRPG.Myself
 
         // 이동 추상함수
         public abstract void MoveAction();
+
 
         // 이동
         protected void Move(Direction dir)
@@ -68,6 +70,17 @@ namespace Profect.TextRPG.Myself
             if (!Data.map[pos.y, pos.x] ||          // 이동한 자리가 벽이거나
                 Data.IsObjectInPos(pos))            // 다른 물체가 있을 때
                 pos = prevPos;                          // 저장위치로 복귀
+        }
+
+        public void Attack(Player player)
+        {
+            player.TakeDamage(ap);
+        }
+
+        public void TakeDamage(int ap)
+        {
+            if (ap - dp > 0)
+                curHp -= ap - dp;
         }
     }
 }
