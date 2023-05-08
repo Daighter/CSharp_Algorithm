@@ -36,6 +36,7 @@ namespace Profect.TextRPG.Myself
                     break;
             }
 
+            // 플레이어 이동
             switch (input.Key)
             {
                 case ConsoleKey.UpArrow:
@@ -50,6 +51,12 @@ namespace Profect.TextRPG.Myself
                 case ConsoleKey.RightArrow:
                     Data.player.Move(Direction.Right);
                     break;
+            }
+
+            // 몬스터 이동
+            foreach (Monster monster in Data.monsters)
+            {
+                monster.MoveAction();
             }
         }
 
@@ -75,6 +82,15 @@ namespace Profect.TextRPG.Myself
             Console.ForegroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(Data.player.Pos.x * 2, Data.player.Pos.y);
             Console.Write(Data.player.Icon);
+
+            // 모든 몬스터 출력
+            foreach (Monster monster in Data.monsters)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;                 // 커서 색 빨강
+                Console.SetCursorPosition(monster.Pos.x*2, monster.Pos.y);  // 커서 위치 = 몬스터 좌표
+                Console.Write(monster.Icon);                                // 몬스터 아이콘 출력
+            }
+
         }
 
         // 인터페이스 출력

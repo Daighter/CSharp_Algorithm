@@ -28,8 +28,11 @@ namespace Profect.TextRPG.Myself
         public int AP { get { return ap; } }
         public int DP { get { return dp; } }
 
+        // 이동 추상함수
+        public abstract void MoveAction();
+
         // 이동
-        public void Move(Direction dir)
+        protected void Move(Direction dir)
         {
             Position prevPos = pos;
 

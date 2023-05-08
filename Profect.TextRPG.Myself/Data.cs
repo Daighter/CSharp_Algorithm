@@ -38,6 +38,12 @@ namespace Profect.TextRPG.Myself
             map = Stage1.map;
 
             player.Pos = new Position(2, 2);
+
+            monsters.Clear();                   // 리스트<몬스터> 초기화
+
+            Slime slime1 = new Slime();         // 슬라임 생성
+            slime1.Pos = new Position(3, 5);    // 슬라임 좌표
+            monsters.Add(slime1);               // 리스트<몬스터>에 추가
         }
 
         // 매개변수 좌표에 몬스터가 없으면 true
