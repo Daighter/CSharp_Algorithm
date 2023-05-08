@@ -50,6 +50,18 @@ namespace Profect.TextRPG.Myself
                 case Direction.Right:
                     pos.x++;
                     break;
+                case Direction.LeftUp:
+                    pos.x--;    pos.y--;
+                    break;
+                case Direction.RightUp:
+                    pos.x++;    pos.y--;
+                    break;
+                case Direction.LeftDown:
+                    pos.x--;    pos.y++;
+                    break;
+                case Direction.RightDown:
+                    pos.x++;    pos.y++;
+                    break;
             }
 
             if (!Data.map[pos.y, pos.x] ||          // 이동한 자리가 벽이거나

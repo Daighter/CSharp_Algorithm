@@ -44,6 +44,10 @@ namespace Profect.TextRPG.Myself
             Slime slime1 = new Slime();         // 슬라임 생성
             slime1.Pos = new Position(3, 5);    // 슬라임 좌표
             monsters.Add(slime1);               // 리스트<몬스터>에 추가
+
+            Dragon dragon1 = new Dragon();      // 드래곤 생성
+            dragon1.Pos = new Position(3, 10);  // 드래곤 좌표
+            monsters.Add(dragon1);              // 리스트<몬스터>에 추가
         }
 
         // 매개변수 좌표에 몬스터가 없으면 true
