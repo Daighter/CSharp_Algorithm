@@ -27,12 +27,13 @@ namespace Profect.TextRPG.Myself
             image = sb.ToString();
         }
 
+        private int moveTurn = 1;
         public override void MoveAction()
         {
             Position player = new Position(Data.player.Pos.x, Data.player.Pos.y);   // 플레이어 좌표
             List<Position> path;                                                    // 최단거리 리스트
 
-            if (AStar.Heuristic(pos, player) <= 20)                                 // 플레이어가 반경 2칸 안에 들어오면
+            if (AStar.Heuristic(pos, player) <= 30)                                 // 플레이어가 반경 2칸 안에 들어오면
             {
                 if (!AStar.PathFinding(in Data.map, pos, player, out path))             // 갈이 막혔으면 함수 탈출
                     return;
@@ -63,6 +64,7 @@ namespace Profect.TextRPG.Myself
                         else                                                                     // x좌표가 다르면
                             Move(Direction.Left);                                                   // 좌
                         break;
+                        default: break;
                 }
             }
         }

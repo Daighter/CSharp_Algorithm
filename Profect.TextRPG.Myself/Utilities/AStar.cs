@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace Profect.TextRPG.Myself
 {
@@ -15,8 +16,8 @@ namespace Profect.TextRPG.Myself
 		 * 경로 탐색의 우선순위를 두고 유망한 해부터 우선적으로 탐색
 		 ******************************************************/
 
-        const int CostStraight = 10;
-        const int CostDiagonal = 14;
+        const double CostStraight = 10;
+        const double CostDiagonal = 14;
 
         static (int x, int y)[] direction =
         {
@@ -90,7 +91,7 @@ namespace Profect.TextRPG.Myself
                         continue;
 
                     // 4-2. 탐색한 정점 만들기
-                    int g = nextNode.g + ((nextNode.point.x == x || nextNode.point.y == y) ? CostStraight : CostDiagonal);
+                    int g = nextNode.g + ((nextNode.point.x == x || nextNode.point.y == y) ? (int)CostStraight : (int)CostDiagonal);
                     int h = Heuristic(new Position(x, y), end);
                     ASNode newNode = new ASNode(new Position(x, y), nextNode.point, g, h);
 
@@ -118,7 +119,7 @@ namespace Profect.TextRPG.Myself
             // return CostStraight * (xSize + ySize);
 
             // 유클리드 거리 : 대각선을 통해 이동하는 거리
-            return CostStraight * (int)Math.Sqrt(xSize * xSize + ySize * ySize);
+            return (int)(CostStraight * Math.Sqrt(xSize * xSize + ySize * ySize));
         }
 
         private class ASNode
